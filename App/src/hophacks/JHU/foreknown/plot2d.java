@@ -6,7 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.view.View;
 
-//This class was implemented by Ankit Srivastava. Please consider acknowledging the author if it ends up being useful to you.
+//Credits to Ankit Srivastava for the baseline code.
 
 public class plot2d extends View {
 
@@ -15,12 +15,14 @@ public class plot2d extends View {
 	private float maxx,maxy,minx,miny,locxAxis,locyAxis;
 	private int vectorLength;
 	private int axes = 1;
+	private static int colorSwitch;
 	
-	public plot2d(Context context, float[] xvalues, float[] yvalues, int axes) {
+	public plot2d(Context context, float[] xvalues, float[] yvalues, int axes, int colorIn) {
 		super(context);
 		this.xvalues=xvalues;
 		this.yvalues=yvalues;
 		this.axes=axes;
+		this.colorSwitch=colorIn;
 		vectorLength = xvalues.length;
 		paint = new Paint();
 
@@ -39,13 +41,18 @@ public class plot2d extends View {
 		int locyAxisInPixels = toPixelInt(canvasWidth, minx, maxx, locyAxis);
 		String xAxis = "x-axis";
 		String yAxis = "y-axis";
+		int color = 0;
 
 		paint.setStrokeWidth(2);
 		canvas.drawARGB(255, 255, 255, 255);
-		for (int i = 0; i < vectorLength-1; i++) {
-			paint.setColor(Color.RED);
+		for (int i = 0; i < vectorLength-1; i++, color++) {
+			if(color < colorSwitch)
+				paint.setColor(Color.RED);
+			else
+				paint.setColor(Color.BLUE);
 			canvas.drawLine(xvaluesInPixels[i],canvasHeight-yvaluesInPixels[i],xvaluesInPixels[i+1],canvasHeight-yvaluesInPixels[i+1],paint);
 		}
+		
 		
 		paint.setColor(Color.BLACK);
 		canvas.drawLine(0,canvasHeight-locxAxisInPixels,canvasWidth,canvasHeight-locxAxisInPixels,paint);
