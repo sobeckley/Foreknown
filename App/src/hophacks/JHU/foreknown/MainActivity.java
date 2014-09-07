@@ -1,12 +1,16 @@
 package hophacks.JHU.foreknown;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 
 public class MainActivity extends ActionBarActivity {
+    public final static String EXTRA_MESSAGE = "hophacks.JHU.foreknown.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,5 +36,14 @@ public class MainActivity extends ActionBarActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    
+    /** Called when the user clicks the Foreknow! button */
+    public void openGraph(View view) {
+        Intent intent = new Intent(this, DisplayGraphActivity.class);
+        EditText editText = (EditText) findViewById(R.id.stock_name);
+        String message = editText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
     }
 }
