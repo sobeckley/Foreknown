@@ -1246,6 +1246,7 @@ containing a value of this type.
         public static final int action_settings=0x7f0a000f;
         public static final int app_name=0x7f0a000d;
         public static final int button_search=0x7f0a0012;
+        public static final int dataView=0x7f0a0014;
         public static final int hello_world=0x7f0a000e;
         public static final int main_header=0x7f0a0011;
         public static final int main_prompt=0x7f0a0010;

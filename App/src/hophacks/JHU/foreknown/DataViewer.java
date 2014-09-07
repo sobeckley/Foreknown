@@ -14,8 +14,9 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
-public class DisplayGraphActivity extends ActionBarActivity {
+public class DataViewer extends ActionBarActivity {
 	
 
 	/** Called when the activity is first created. */
@@ -59,7 +60,17 @@ public class DisplayGraphActivity extends ActionBarActivity {
         LinearLayout buttonGraph = new LinearLayout(this);
         buttonGraph.setOrientation(LinearLayout.VERTICAL);
         
+        LinearLayout buttons = new LinearLayout(this);
+        buttons.setOrientation(LinearLayout.VERTICAL);
+        TextView CurrentValue = new TextView(this);
+        CurrentValue.setText("Current Value: 27.98");
+        TextView FiftyDayHigh = new TextView(this);
+        FiftyDayHigh.setText("Fifty Day High: 28.31");
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT); // Verbose!
+    
+        buttons.addView(CurrentValue, lp);
+        buttons.addView(FiftyDayHigh, lp);
+        buttonGraph.addView(buttons, lp);
         
         float[] days = new float[totalData.length];
         for(int k = 0; k < totalData.length; k++) {

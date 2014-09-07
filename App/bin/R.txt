@@ -344,6 +344,7 @@ int string abc_shareactionprovider_share_with_application 0x7f0a000b
 int string action_settings 0x7f0a000f
 int string app_name 0x7f0a000d
 int string button_search 0x7f0a0012
+int string dataView 0x7f0a0014
 int string hello_world 0x7f0a000e
 int string main_header 0x7f0a0011
 int string main_prompt 0x7f0a0010

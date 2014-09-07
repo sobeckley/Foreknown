@@ -8,5 +8,5 @@
     <string name="main_header">Enter the name of a stock!</string>
     <string name="button_search">Foreknow!</string>
     <string name="title_activity_display_graph">DisplayGraphActivity</string>
-
+	<string name="dataView">Data Viewer</string>
 </resources>

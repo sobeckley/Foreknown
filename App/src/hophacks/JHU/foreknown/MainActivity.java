@@ -40,7 +40,7 @@ public class MainActivity extends ActionBarActivity {
     
     /** Called when the user clicks the Foreknow! button */
     public void openGraph(View view) {
-        Intent intent = new Intent(this, DisplayGraphActivity.class);
+        Intent intent = new Intent(this, DataViewer.class);
         EditText editText = (EditText) findViewById(R.id.stock_name);
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
