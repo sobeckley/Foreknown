@@ -5,7 +5,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="main_prompt">Enter a stock!</string>
-    <string name="main_header">Enter the name of a stock to begin!</string>
+    <string name="main_header">Enter the name of a stock!</string>
     <string name="button_search">Foreknow!</string>
     <string name="title_activity_display_graph">DisplayGraphActivity</string>
 
