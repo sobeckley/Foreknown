@@ -1,6 +1,6 @@
 HopHacks 2014 Project -- Sam Beckley, Rajiv Deshpande, Vignesh Ramchandran, Thomas Yi
 
-***A stock market predictor Android App that utilizes retrospective analysis
+***Foreknown--A stock market predictor Android App that utilizes retrospective analysis
 to create a stochastic model for predicting future market behavior***
 
 Overview:
@@ -14,8 +14,15 @@ the complex forecasting of fluctuating stocks within the convenience of an Andro
 Approach:
 We use a stochastic model to treat stocks as semi-random agents, bounded by drift and influenced
 by volatility, in order to make a prediction that uses a random, noise generating function to
-make future predictions as to how stocks will behave.
+make future predictions as to how stocks will behave. Consequently, we graph the vectorized
+data from the mathematical model to display the predictions; as a sample, we have included 
+the stock data for HP.
 
 Future:
 We plan to launch this app on the marketplace free of charge for use by anyone, maintain
 the github repositiory, and potentially accept future pull requests from third parties.
+Additionally, we will work towards refining the application--in particular, we hope to
+implement a query system that can access stock prices from a market database.
+
+
+Thank you for your time and interest!
