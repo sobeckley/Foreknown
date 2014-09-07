@@ -33,7 +33,7 @@ public class TestMath {
 	//Stock drift and volatility
 		
 		int dt = 1;
-		int tFinal = 168;
+		int tFinal = 168;  // TODO change to reflect market hours
 		double drift = Math.sqrt(sSquared)/Math.sqrt(dt);
 		double volatility = (uBar + sSquared/2)/dt;
 		double So = arr[arr.length - 1];
