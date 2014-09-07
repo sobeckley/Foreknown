@@ -34,8 +34,8 @@ public class TestMath {
 		
 	//Stock drift and volatility
 		
-		double dt = 0.5;
-		double tFinal = 32.5;  // TODO change to reflect market hours
+		double dt = 1;
+		double tFinal = 252;
 		double drift = Math.sqrt(sSquared)/Math.sqrt(dt);
 		double volatility = (uBar + sSquared/2)/dt;
 		double So = arr[arr.length - 1];
@@ -47,16 +47,11 @@ public class TestMath {
 		int counter = 0;
 		
 		
-/*		for (int t = 0; t < tFinal; t += dt) {
-			Wt = r.nextGaussian()*Math.sqrt(dt);
-			St[counter] = So*Math.exp(volatility*Wt + (drift - (Math.pow(volatility, 2))/2)*t);
-			//So = St[counter];
-			counter++;
-		}*/
 		
 		while (counter < St.length  &&  t<= tFinal){
-			Wt = Math.log(Math.abs(r.nextGaussian()*Math.sqrt(dt)));
-			St[counter] = So*Math.exp(volatility*Wt + (drift - (Math.pow(volatility, 2))/2)*t);
+			Wt = So*(r.nextGaussian()*Math.sqrt(dt));
+			St[counter] = So + (drift - (Math.pow(volatility, 2))/2)*dt + volatility*Wt*Math.sqrt(dt);
+			So = St[counter];
 			counter ++;
 			t += dt;
 		}
